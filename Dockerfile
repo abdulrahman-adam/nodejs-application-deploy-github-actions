@@ -7,6 +7,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 8089
 
 CMD ["node", "index"]
