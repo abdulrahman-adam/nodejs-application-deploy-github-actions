@@ -21,6 +21,10 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
+            script: |
             cd /root/nodejs-application-deploy-github-actions
             git pull
+            # Stop and remove existing containers defined in the compose file
+            docker compose down 
+            # Build and start new ones
             docker compose up -d --build
